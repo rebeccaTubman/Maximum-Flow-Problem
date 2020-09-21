@@ -128,30 +128,3 @@ bool List::DeleteNode(int node) {
 		return false;
 	}
 }
-// Adds a new node to the list in ascending order.
-void List::InsertInAscendingOrder(int vertex) {
-	Node* node = new Node(vertex);
-	if (IsEmpty()) {
-		head = tail = node;
-	}
-	else if (head->getData() > vertex) {
-		node->setNext(head);
-		head = node;
-	}
-	else {
-		Node *prev = head, *tmp = head->getNext();
-		while (tmp && tmp->getData() < vertex) {
-			prev = tmp;
-			tmp = tmp->getNext();
-		}
-		if (!tmp) {
-			prev->setNext(node);
-			tail = node;
-		}
-		else {
-			node->setNext(tmp);
-			prev->setNext(node);
-		}
-	}
-	this->size++;
-}
