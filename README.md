@@ -33,4 +33,3 @@ Example for valid graph format in file:
 5 6 4
 
 		4 6 20
-
